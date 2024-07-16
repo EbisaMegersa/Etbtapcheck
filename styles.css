@@ -12,8 +12,9 @@ body {
 
 #balance {
     position: absolute;
+    right: 30px;
     top: 20px;
-    font-size: 28px;
+    font-size: 20px;
     z-index: 10;
     color: #ffcc00;
     background: rgba(0, 0, 0, 0.5);
@@ -24,8 +25,9 @@ body {
 
 #username {
     position: absolute;
-    top: 90px; /* Adjust this value as needed */
-    font-size: 22px;
+    left: 30px;
+    top: 20px; /* Adjust this value as needed */
+    font-size: 20px;
     z-index: 10;
     color: white;
     background: rgba(0, 0, 0, 0.5);
