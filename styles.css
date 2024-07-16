@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    background-color: rebeccapurple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #f8f8f8;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    position: relative;
+}
+
+#balance {
+    position: absolute;
+    top: 20px;
+    font-size: 28px;
+    z-index: 10;
+    color: #ffcc00;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #ffcc00;
+}
+
+#username {
+    position: absolute;
+    top: 90px; /* Adjust this value as needed */
+    font-size: 22px;
+    z-index: 10;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffcc00;
+}
+
+#main-img {
+    max-width: 80%;
+    height: auto;
+    cursor: none;
+    transition: transform 0.15s;
+    margin-top: 230px; /* Adjust this value as needed */
+}
+
+#main-img.tapped {
+    transform: scale(1.04);
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    position: fixed;
+    bottom: 15px;
+    background-color: rgba(30, 30, 47, 0.9);
+    padding: 15px 0;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ffcc00;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-emoji {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.nav-icon {
+    width: 24px; /* Adjust the size as needed */
+    height: 24px; /* Adjust the size as needed */
+    border-radius: 50%; /* Optional: to make the image circular */
+}
+
+.nav-photo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-bottom: 1px;
+    border-radius: 15px;
+}
+
+.nav-bar button {
+    background: none;
+    border: none;
+    color: #ffcc00;
+    font-size: 22px;
+    cursor: none;
+    border-radius: 15px;
+}
+
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: mediumpurple;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    display: none;
+    max-width: 80%;
+    font-size: 20px;
+    box-shadow: 0 0 10px #ffcc00;
+}
+
+.hidden {
+    display: none;
+}
