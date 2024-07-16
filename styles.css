@@ -12,7 +12,7 @@ body {
 
 #balance {
     position: absolute;
-    right: 35px;
+    right: 50px;
     top: 20px;
     font-size: 20px;
     z-index: 10;
@@ -25,8 +25,8 @@ body {
 
 #username {
     position: absolute;
-    left: 35px;
-    top: 35px; /* Adjust this value as needed */
+    left: 50px;
+    top: 40px; /* Adjust this value as needed */
     font-size: 20px;
     z-index: 10;
     color: #ffcc00;
