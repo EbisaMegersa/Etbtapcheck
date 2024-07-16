@@ -12,21 +12,21 @@ body {
 
 #balance {
     position: absolute;
-    top: 50px;
-    font-size: 28px;
+    top: 65px;
+    font-size: 17px;
     z-index: 10;
     color: #ffcc00;
     background: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    border-radius: 15px;
+    padding: 5px 10px;
+    border-radius: 10px;
     box-shadow: 0 0 10px #ffcc00;
 }
 
 #username {
     position: absolute;
-    left: 60px;
+    left: 80px;
     top: 20px; /* Adjust this value as needed */
-    font-size: 22px;
+    font-size: 17px;
     z-index: 10;
     color: #ffcc00;
     background: rgba(0, 0, 0, 0.5);
