@@ -1,5 +1,5 @@
-let balance = 0.0;
-const incrementValue = 0.003;
+let balance = 0.0; // Use a float for ETB balance
+const incrementValue = 0.003; // Amount per tap
 
 document.addEventListener('DOMContentLoaded', () => {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
@@ -51,7 +51,11 @@ document.getElementById('boost').addEventListener('click', () => {
 });
 
 document.getElementById('frens').addEventListener('click', () => {
-    showPopup("Referall link ለማግኘት ይሄንን step ይከታተሉ!\n1 ቦቱን /start ይበሉት\n2 ቻናላችንን ይቀላቀሉ \n3 የሚመጣዉን ጥያቄ በመመለስ ወደ ቦቱ ዉስጥ ይግቡ\n4 ከዛ ጓደኞችዎን ይጋብዙ ሚለውን Button በመጫን የርሶን መጋበዣ link ማግኘት ትችላላችሁ!");
+    window.location.href = 'frens.html';
+});
+
+document.getElementById('task').addEventListener('click', () => {
+    window.location.href = 'task.html';
 });
 
 function createFloatingText(x, y, text) {
