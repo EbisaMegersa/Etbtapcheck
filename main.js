@@ -64,11 +64,11 @@ function createFloatingText(x, y, text) {
     floatingText.style.fontSize = '24px';
     floatingText.style.fontWeight = 'bold';
     floatingText.style.zIndex = '1000';
-    floatingText.style.transition = 'all 1s ease-out';
+    floatingText.style.transition = 'all 0.5s ease-out';
     document.body.appendChild(floatingText);
 
     setTimeout(() => {
-        floatingText.style.transform = 'translateY(-50px)';
+        floatingText.style.transform = 'translateY(-70px)';
         floatingText.style.opacity = '0';
     }, 50);
 
