@@ -12,19 +12,21 @@ body {
 
 #balance {
     position: absolute;
-    top: 50px;
-    font-size: 28px;
+    top: 20px;
+    right: 10px; /* Positioning to the right */
+    font-size: 22px;
     z-index: 10;
     color: #ffcc00;
     background: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    border-radius: 15px;
+    padding: 5px 10px;
+    border-radius: 10px;
     box-shadow: 0 0 10px #ffcc00;
 }
 
 #username {
     position: absolute;
-    top: 10px; /* Adjust this value as needed */
+    top: 20px;
+    left: 10px; /* Positioning to the left */
     font-size: 22px;
     z-index: 10;
     color: #ffcc00;
@@ -39,7 +41,7 @@ body {
     height: auto;
     cursor: none;
     transition: transform 0.15s;
-    margin-top: 230px; /* Adjust this value as needed */
+    margin-top: 150px; /* Adjust this value as needed */
 }
 
 #main-img.tapped {
