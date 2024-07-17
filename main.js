@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (storedBalance !== null) {
             balance = parseFloat(storedBalance);
         }
-        document.getElementById('username').innerText = `User: ${user.username}`;
+        document.getElementById('username').innerText = ` ${user.usernam}`;
         updateDisplay();
     } else {
         alert("Unable to get Telegram user info.");
