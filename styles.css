@@ -25,6 +25,7 @@ body {
 
 #username {
     position: absolute;
+    display: flex;
     top: 20px;
     left: 20px; /* Positioning to the left */
     font-size: 20px;
