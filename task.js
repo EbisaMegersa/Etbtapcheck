@@ -8,38 +8,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function handleJoin(event) {
     const button = event.target;
-    const taskElement = button.parentElement;
     const url = button.dataset.url;
-    const statusElement = taskElement.querySelector('.status');
 
     // Open the Telegram URL in a new tab
     window.open(url, '_blank');
 
-    // Wait for a moment to allow the user to join the channel
-    setTimeout(() => {
-        const user = window.Telegram.WebApp.initDataUnsafe.user;
+    // Change the button text to "Check" after opening the link
+    button.textContent = 'Check';
+    button.classList.add('check-button');
+    button.classList.remove('join-button');
+    button.removeEventListener('click', handleJoin);
+    button.addEventListener('click', handleCheck);
+}
 
-        if (user) {
-            checkMembership(user.id)
-                .then(isMember => {
-                    if (isMember) {
-                        statusElement.textContent = 'completed ✔️';
-                        taskElement.classList.add('completed');
-                        showPopup('Great! You got 5 ETB');
-                        balance += 5;
-                        updateBalance();
-                    } else {
-                        showPopup("Hmm, you aren't joined");
-                    }
-                })
-                .catch(error => {
-                    console.error('Error checking membership:', error);
-                    showPopup('Failed to check membership');
-                });
-        } else {
-            showPopup('Unable to get Telegram user info.');
-        }
-    }, 5000); // Wait 5 seconds to simulate user joining the channel
+function handleCheck(event) {
+    const button = event.target;
+    const taskElement = button.parentElement;
+    const statusElement = taskElement.querySelector('.status');
+
+    const user = window.Telegram.WebApp.initDataUnsafe.user;
+
+    if (user) {
+        checkMembership(user.id)
+            .then(isMember => {
+                if (isMember) {
+                    statusElement.textContent = 'completed ✔️';
+                    taskElement.classList.add('completed');
+                    showPopup('Wow! You got 5 ETB');
+                    balance += 5;
+                    updateBalance();
+                } else {
+                    showPopup("Hmm, you aren't joined");
+                }
+            })
+            .catch(error => {
+                console.error('Error checking membership:', error);
+                showPopup('Failed to check membership');
+            });
+    } else {
+        showPopup('Unable to get Telegram user info.');
+    }
 }
 
 function checkMembership(userId) {
