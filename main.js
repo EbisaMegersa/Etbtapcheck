@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (user) {
         let username = user.username || user.first_name || 'Unknown';
-        if (username.length > 15) {
-            username = username.substring(0, 15) + '...';
+        if (username.length > 10) {
+            username = username.substring(0, 10) + '...';
         }
         document.getElementById('username-value').innerText = username;
 
