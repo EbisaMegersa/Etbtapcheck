@@ -13,8 +13,8 @@ body {
 #balance {
     position: absolute;
     top: 20px;
-    right: 10px; /* Positioning to the right */
-    font-size: 18px;
+    right: 20px; /* Positioning to the right */
+    font-size: 20px;
     z-index: 10;
     color: #ffcc00;
     background: rgba(0, 0, 0, 0.5);
@@ -26,8 +26,8 @@ body {
 #username {
     position: absolute;
     top: 20px;
-    left: 10px; /* Positioning to the left */
-    font-size: 18px;
+    left: 20px; /* Positioning to the left */
+    font-size: 20px;
     z-index: 10;
     color: #ffcc00;
     background: rgba(0, 0, 0, 0.5);
