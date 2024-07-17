@@ -15,20 +15,43 @@ function handleJoin(event) {
     // Open the Telegram URL in a new tab
     window.open(url, '_blank');
 
-    // Check membership status
+    // Wait for a moment to allow the user to join the channel
     setTimeout(() => {
-        const userJoined = confirm('Did you join the channel?'); // This is a placeholder for actual Telegram API check
+        const user = window.Telegram.WebApp.initDataUnsafe.user;
 
-        if (userJoined) {
-            statusElement.textContent = 'completed ✔️';
-            taskElement.classList.add('completed');
-            showPopup('Great! You got 5 ETB');
-            balance += 5;
-            updateBalance();
+        if (user) {
+            checkMembership(user.id)
+                .then(isMember => {
+                    if (isMember) {
+                        statusElement.textContent = 'completed ✔️';
+                        taskElement.classList.add('completed');
+                        showPopup('Great! You got 5 ETB');
+                        balance += 5;
+                        updateBalance();
+                    } else {
+                        showPopup("Hmm, you aren't joined");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error checking membership:', error);
+                    showPopup('Failed to check membership');
+                });
         } else {
-            showPopup("Hmm, you aren't joined");
+            showPopup('Unable to get Telegram user info.');
         }
     }, 5000); // Wait 5 seconds to simulate user joining the channel
+}
+
+function checkMembership(userId) {
+    return fetch('/check-membership', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ userId })
+    })
+        .then(response => response.json())
+        .then(data => data.isMember);
 }
 
 function showPopup(message) {
